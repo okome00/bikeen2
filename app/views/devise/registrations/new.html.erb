@@ -1,0 +1,46 @@
+<!-- Signup画面 -->
+<div class="conteiner p-3">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h2 class="py-5 mb-0" style="font-family: fantasy;">Sign up</h2>
+
+      <div class="field-body p-4">
+        <%= form_with model: @user, url: user_registration_path do |f| %>
+        <%= render "user/shared/error_messages", resource: resource %>
+          <div class="field mb-3">
+            <%= f.text_field :name, placeholder: " Name", autofocus: true, autocomplete: "name" %>
+          </div>
+
+          <div class="field mb-3">
+            <%= f.email_field :email, placeholder: " Email Address", autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field mb-3">
+            <%# f.label :password %>
+            <% if @minimum_password_length %>
+            <em><%# (@minimum_password_length characters minimum) %></em>
+            <% end %>
+            <%= f.password_field :password, placeholder: " Password", autocomplete: "new-password" %>
+          </div>
+
+          <div class="field mb-3">
+            <%= f.password_field :password_confirmation, placeholder: " Password(re-enter)", autocomplete: "new-password" %>
+          </div>
+
+          <div class="field mb-3">
+            <%= f.submit "Sign up", class: "btn btn-outline-warning btn-sm mt-4" %>
+          </div>
+        <% end %>
+
+        <div class="signin-field">
+          <p>──────────　Or　──────────</p>
+          <p>
+            Already have on account?<br />
+            <%= link_to "Log in", new_user_session_path, class: "signup-link" %>
+            <%# render "user/shared/links", class: "font-weight-bold" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,442 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* swiper読み込み */
+@import 'swiper/swiper-bundle';
+@import "slick-theme";
+@import "slick";
+
+/* 共通 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.header-name {
+  font-family: fantasy;
+  font-size: 25px;
+}
+
+.search-item {
+  padding-top: 7px;
+  padding-right: 50px;
+}
+
+.footer-name {
+  font-family: fantasy;
+}
+
+.footer-fixed {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #ffd700;
+  color: #000;
+  text-align: center;
+  width: 100%;
+  height: 100px
+}
+
+ul {
+  list-style: none;
+}
+
+.n-circle {
+  padding-right: 8px;
+  padding-bottom: 5px;
+  font-size: 10px;
+}
+
+/* top画面 */
+.top-image {
+  width: 100%;
+  height: 1000px;
+  background-image: url("biker-man.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+@media (max-width: 735px) {
+  .top-image {
+    background-image: url("free-bike.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.top-image-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 1000px;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  padding-top: 400px;
+}
+
+.top-image-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.top-image-post {
+  margin-top: 10px;
+}
+
+/* Signup/in画面 */
+.signin-field {
+  margin-bottom: 30px;
+}
+
+.signin-field-image {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+.icon:last-child {
+  margin-right: 0;
+}
+
+.signup-link {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* プロフィール画面 */
+.profile-wrap {
+  padding-top: 50px;
+  flex-grow: 1;
+  margin: 0 auto 30px;
+  max-width: 935px;
+  width: 100%;
+}
+
+.profile-top {
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.profile-img {
+  margin-right: 28px;
+  justify-content: center;
+}
+
+.profile-icon {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.profile-name {
+  flex-shrink: 1;
+}
+
+.profile-status {
+  justify-content: space-around;
+  padding: 12px 0;
+  display: flex;
+}
+
+.profile-status-list {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.follower-link, .follow-link, .favorite-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.profile-post {
+  padding-bottom: 50px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-item-block {
+  justify-content: center;
+  display: flex;
+  margin: 5px;
+}
+
+@media (max-width: 735px) {
+  .post-item-block {
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+.post-item {
+  display: block;
+  position: relative;
+  width: 100%;
+  flex: 1 0 0%;
+  padding-bottom: 10px;
+}
+
+.post-item img {
+  width: 300px;
+  height: 300px;
+}
+
+.profile-post-none {
+  height: auto;
+  padding: 40px 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.post-none {
+  align-items: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.post-none-text {
+  font-size: 16px;
+}
+
+.user-images {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+  }
+
+@media (max-width: 735px) {
+  .profile-top {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px
+  }
+
+  .post-item {
+    margin-bottom: 3px;
+    position: relative;
+  }
+
+  .post-item-block {
+    margin-bottom: 3px;
+  }
+}
+
+/* 投稿詳細画面 */
+.post-name {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.post-content-show {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.post-comment {
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.comment-field {
+  margin-left: 20px;
+}
+
+/*.user-post-img {
+  height: 600px;
+}*/
+
+
+/* 投稿一覧画面 */
+.post-wrap {
+  margin: 50px 250px;
+}
+
+.post-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-content:after {
+  display: block;
+  content:"";
+  width: 300px;
+  height: 300px;
+  margin: 15px;
+}
+
+@media (max-width: 735px) {
+  .post-content {
+    justify-content: center;
+  }
+}
+
+.post-content img {
+  width: 300px;
+  height: 300px;
+  margin: 15px;
+}
+
+.images-box {
+  position: relative;
+}
+
+.images {
+  position: absolute;
+  top: 7%;
+  right: 7%;
+}
+
+.images-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.pagination {
+  margin: 50px 400px;
+  justify-content: center;
+}
+
+/* 検索結果画面 */
+.search-wrap {
+  margin: 50px 150px;
+}
+
+.search-post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-post img {
+  width: 300px;
+  height: 300px;
+  margin: 15px;
+}
+
+/* ハッシュタグ一覧画面 */
+.hashtag-wrap {
+  margin: 50px 150px;
+}
+
+.hashtag-post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hashtag-post img {
+  width: 300px;
+  height: 300px;
+  margin: 15px;
+}
+
+.hashtag-name {
+  margin-top: 50px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* フォロー・フォロワー一覧画面 */
+.follow-wrap {
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.follow-title {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.follow-content {
+  margin-top: 20px;
+  border: 1px solid #dbdbdb;
+}
+
+.follow-list {
+  padding: 8px 16px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.follow-list-img {
+  margin-right: 12px;
+  justify-content: center;
+}
+
+/* 通知一覧画面 */
+.notification-wrap {
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.notification-title {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.notification-content {
+  margin-top: 20px;
+  border: 1px solid #dbdbdb;
+}
+
+.notification-list {
+  padding: 8px 16px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.notification-list-img {
+  margin-right: 12px;
+  justify-content: center;
+}
