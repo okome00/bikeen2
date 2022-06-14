@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bikeen</title>
+    <title>bikeen</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- CSS読み込み -->
+    <!-- Bootstrap読み込み -->
+    <!-- slick/CDN読み込み-->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="footer-fixed">
+      <header class="shadow-sm"> <!-- ヘッダー部分テンプレ -->
+        <%= render 'layouts/header' %>
+      </header>
+
+      <main class="mb-auto"> <!-- メイン画面 -->
+        <%= yield %>
+      </main>
+
+      <footer> <!-- フッター部分テンプレ -->
+        <%= render 'layouts/footer' %>
+      </footer>
+    </div>
   </body>
 </html>

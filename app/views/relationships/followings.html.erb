@@ -1,0 +1,25 @@
+<!-- フォロー一覧画面 -->
+<div class="follow-wrap">
+  <h4 class="follow-title">フォロー一覧</h4>
+  <% if @users.exists? %>
+    <% @users.each do |user| %>
+      <div class="follow-content">
+        <div class="follow-list">
+          <div class="follow-list-img">
+            <%= link_to user_path(user.id) do %>
+              <%= image_tag user.get_profile_image(50, 50), class: "rounded-circle" %>
+            <% end %>
+          </div>
+          <div class="follow-list-name">
+            <strong class="text-dark"><%= user.name %></strong><br />
+            <%= user.introduction %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="follow-none">
+      <h4 class="follow-none-text font-weight-bold">ユーザーはいません</h4>
+    </div>
+  <% end %>
+</div>

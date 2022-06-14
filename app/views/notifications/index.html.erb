@@ -1,0 +1,12 @@
+<!-- 通知一覧画面 -->
+<div class="notification-wrap">
+  <h4 class="notification-title">通知一覧</h4>
+  <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+  <% if notifications.exists? %>
+    <%= render notifications %>
+    <%= paginate notifications %>
+  <% else %>
+    <div class="notification-none">
+      <h4 class="notification-none-text font-weight-bold">通知はありません</h4>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<!-- 投稿一覧画面 -->
+<div class="post-wrap">
+  <div class="post-content">
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post.id) do %>
+        <% if post.images.attached? %>
+          <% if post.images.length < 2 %>
+            <%= image_tag post.images[0], size: '100*100' %>
+          <% else %>
+            <div class="images-box">
+              <%= image_tag post.images[0], size: '100*100' %>
+              <div class="images">
+                <i class="fas fa-images text-secondary images-icon"></i>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= paginate @posts %>
+  </div>
+</div>
